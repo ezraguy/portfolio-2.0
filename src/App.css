@@ -1,4 +1,15 @@
 .App {
   background-color: #000;
-  min-height: 100vh;
+}
+.App .container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.section {
+  height: 100vh;
+  color: #fff;
+  scroll-snap-align: center;
 }

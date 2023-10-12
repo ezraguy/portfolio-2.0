@@ -1,9 +1,9 @@
 .navbar {
-  display: flex;
+  display: block;
   background-color: #000;
   max-width: 1440px;
   padding: 30px 50px;
-  margin: 0 auto;
+  width: 100%;
   .logo {
     font-family: "Courgette", cursive;
     font-size: 30px;
