@@ -1,5 +1,8 @@
 .App {
   background-color: #000;
+  position: relative;
+  background-image: url("../public/bg.jpeg");
+  cursor: none;
 }
 .App .container {
   height: 100vh;
@@ -12,4 +15,29 @@
   height: 100vh;
   color: #fff;
   scroll-snap-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  content: "";
+  visibility: hidden;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+  border: 1px solid #fff;
+  position: absolute;
+  z-index: 1000;
+}
+
+.circle .innerCircle {
+  width: 29px;
+  height: 29px;
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  opacity: 0;
+  transition: 0.3s ease;
+  top: -1px;
+  left: -1px;
 }

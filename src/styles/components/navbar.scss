@@ -1,17 +1,18 @@
 .navbar {
   display: block;
-  background-color: #000;
   max-width: 1440px;
   padding: 30px 50px;
   width: 100%;
+
+  position: absolute;
   .logo {
     font-family: "Courgette", cursive;
     font-size: 30px;
     letter-spacing: 1px;
     b {
       color: #fff;
-      text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-        0 0 0.1em #ff4444, 0 10px 3px #000;
+      text-shadow: 0 -4px 100px, 0 0 2px, 0 0 1em #3d1c56, 0 0 0.5em #3d1c56,
+        0 0 0.1em #3d1c56, 0 10px 3px #000;
       span {
         animation: blink linear infinite 2s;
         &:nth-of-type(2) {
