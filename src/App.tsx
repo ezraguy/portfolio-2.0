@@ -6,21 +6,32 @@ import Work from "./sections/work";
 
 function App() {
   const cursor = useRef<any>(null);
-  const innerCircle = useRef<any>(null);
-  const handleMouseMove: (e: any) => void = (e: any) => {
+  const handleMouseMove: (e: any) => void = (e?: any) => {
     const { clientX, clientY } = e;
     cursor.current.style.visibility = "visible";
-    cursor.current.style.transform = `translate3d(${clientX}px, ${clientY}px , 0`;
+    cursor.current.style.transform = `translate3d(${clientX - 5}px, ${
+      clientY - 5
+    }px , 0`;
   };
-  const handleMouseHold: (isMouseDown: boolean) => void = (
-    isMouseDown: boolean
-  ) => {
-    innerCircle.current.style.opacity = isMouseDown ? 1 : 0;
+
+  const handleAOSAnimations: () => void = () => {
+    const aosAnimation = document.querySelectorAll("[data-aos]");
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add("aos-animate");
+        } else {
+          entry.target.classList.remove("aos-animate");
+        }
+      });
+    });
+    aosAnimation.forEach((aosObject) => {
+      observer.observe(aosObject);
+    });
   };
   useEffect(() => {
     window.addEventListener("mousemove", (e) => handleMouseMove(e));
-    window.addEventListener("mousedown", () => handleMouseHold(true));
-    window.addEventListener("mouseup", () => handleMouseHold(false));
+    handleAOSAnimations();
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -29,10 +40,8 @@ function App() {
   return (
     <>
       <div className='App'>
-        <div className='circle' ref={cursor}>
-          <div className='innerCircle' ref={innerCircle}></div>
-        </div>
         <div className='container'>
+          <div className='circle' ref={cursor}></div>
           <Hero />
           <About />
           <Work />

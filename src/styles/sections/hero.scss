@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   max-width: 1440px;
+  margin: auto;
 
   .left {
     flex: 1;
@@ -15,12 +16,21 @@
     display: flex;
     justify-content: center;
     width: 100%;
-
+    text-align: center;
     .name {
+      margin-bottom: 5px;
     }
-
+    .subTitle {
+      margin-bottom: 7px;
+    }
+    .desc {
+      max-width: 60%;
+      margin: auto;
+    }
     @media screen and (min-width: 992px) {
       position: relative;
+
+      text-align: left;
       .name {
         width: fit-content;
         background-color: #fff;
@@ -31,11 +41,12 @@
         margin-bottom: 5px;
       }
       .subTitle {
-        display: block;
         font-size: 24px;
         margin-bottom: 15px;
       }
       .desc {
+        max-width: 100%;
+        margin: 0;
         font-size: 15px;
       }
     }
@@ -43,6 +54,7 @@
   .right {
     flex: 1;
     canvas {
+      z-index: -1;
       width: 100% !important;
     }
     display: flex;

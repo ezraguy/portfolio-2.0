@@ -9,9 +9,13 @@ const Hero = () => {
       <Navbar />
       <div className='left'>
         <div className='content'>
-          <h1 className='name'>Hey, I'm Guy Ezra</h1>
-          <span className='subTitle'>Front End Developer</span>
-          <p className='desc'>
+          <h1 className='name' data-aos='fade-down' data-aos-delay='600'>
+            Hey, I'm Guy Ezra
+          </h1>
+          <p className='subTitle' data-aos='fade-down' data-aos-delay='400'>
+            Front End Developer
+          </p>
+          <p className='desc' data-aos='fade-down' data-aos-delay='200'>
             My biggest passion is to make a website come to life.
           </p>
         </div>

@@ -1,8 +1,7 @@
 .App {
   background-color: #000;
   position: relative;
-  background-image: url("../public/bg.jpeg");
-  cursor: none;
+  cursor: url("./assets/circle.svg"), auto;
 }
 .App .container {
   height: 100vh;
@@ -19,8 +18,10 @@
 }
 
 .circle {
-  width: 30px;
-  height: 30px;
+  pointer-events: none;
+  z-index: -1;
+  width: 35px;
+  height: 35px;
   content: "";
   visibility: hidden;
   border-radius: 50%;
@@ -28,16 +29,4 @@
   border: 1px solid #fff;
   position: absolute;
   z-index: 1000;
-}
-
-.circle .innerCircle {
-  width: 29px;
-  height: 29px;
-  background-color: #fff;
-  border-radius: 50%;
-  content: "";
-  opacity: 0;
-  transition: 0.3s ease;
-  top: -1px;
-  left: -1px;
 }
