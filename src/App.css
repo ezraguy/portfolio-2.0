@@ -2,6 +2,7 @@
   background-color: #000;
   position: relative;
   cursor: url("./assets/circle.svg"), auto;
+  background: url("../public/bg.jpg") center center;
 }
 .App .container {
   height: 100vh;
@@ -15,13 +16,16 @@
   color: #fff;
   scroll-snap-align: center;
   font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .circle {
   pointer-events: none;
   z-index: -1;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   content: "";
   visibility: hidden;
   border-radius: 50%;
@@ -29,4 +33,18 @@
   border: 1px solid #fff;
   position: absolute;
   z-index: 1000;
+  margin: 0;
+}
+
+button {
+  cursor: url("./assets/circle.svg"), auto;
+}
+
+@media screen and (min-width: 1500px) {
+  .section {
+    width: 100%;
+    max-width: 1440px;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 }

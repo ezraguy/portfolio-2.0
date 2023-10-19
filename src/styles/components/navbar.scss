@@ -1,10 +1,18 @@
 .navbar {
   display: block;
-  max-width: 1440px;
-  padding: 30px 50px;
+  max-width: 1140px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
+  z-index: 1;
+  @media screen and (min-width: 1400px) {
+    padding: 30px 0;
+    position: absolute;
 
-  position: absolute;
+    max-width: 1440px;
+  }
   .logo {
     font-family: "Courgette", cursive;
     font-size: 30px;
@@ -12,12 +20,28 @@
     b {
       color: #fff;
       text-shadow: 0 -4px 100px, 0 0 2px, 0 0 1em #3d1c56, 0 0 0.5em #3d1c56,
-        0 0 0.1em #3d1c56, 0 10px 3px #000;
+        0 0 0.1em #3d1c56, 0 6px 3px #000;
       span {
         animation: blink linear infinite 2s;
         &:nth-of-type(2) {
           animation: blink linear infinite 3s;
         }
+      }
+    }
+  }
+  .links {
+    z-index: 21;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    &:hover {
+      cursor: none;
+    }
+    .link {
+      width: 30px;
+      height: 30px;
+      &:hover {
+        cursor: none;
       }
     }
   }

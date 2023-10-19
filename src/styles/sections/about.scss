@@ -1,6 +1,65 @@
 .about {
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .right {
+      text-align: center;
+      width: 95%;
+    }
+    .left {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+      @media screen and (min-width: 992px) {
+        width: 50%;
+        align-items: flex-start;
+      }
+      .animatedTextContainer {
+        position: relative;
+        width: fit-content;
+
+        &:hover {
+          .backAnimatedText {
+            width: 100%;
+          }
+        }
+        .animatedText,
+        .backAnimatedText {
+          font-size: 50px;
+          text-align: center;
+          color: transparent;
+          font-weight: bold;
+          @media screen and (min-width: 992px) {
+            font-size: 90px;
+            text-align: left;
+          }
+        }
+        .animatedText {
+          -webkit-text-stroke: 1px white;
+        }
+        .backAnimatedText {
+          position: absolute;
+          top: 0;
+          color: #fff;
+          width: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          transition: 0.8s ease;
+        }
+      }
+    }
+  }
 }

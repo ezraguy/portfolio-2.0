@@ -9,8 +9,8 @@ function App() {
   const handleMouseMove: (e: any) => void = (e?: any) => {
     const { clientX, clientY } = e;
     cursor.current.style.visibility = "visible";
-    cursor.current.style.transform = `translate3d(${clientX - 5}px, ${
-      clientY - 5
+    cursor.current.style.transform = `translate3d(${clientX - 10}px, ${
+      clientY - 10
     }px , 0`;
   };
 
@@ -30,7 +30,9 @@ function App() {
     });
   };
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => handleMouseMove(e));
+    if (window.innerWidth > 500) {
+      window.addEventListener("mousemove", (e) => handleMouseMove(e));
+    }
     handleAOSAnimations();
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
