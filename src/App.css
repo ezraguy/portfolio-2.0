@@ -1,8 +1,19 @@
 .App {
   background-color: #000;
   position: relative;
-  cursor: url("./assets/circle.svg"), auto;
   background: url("../public/bg.jpg") center center;
+}
+
+.layout {
+  height: 100%;
+  width: 100%;
+  cursor: url("./assets/circle.svg"), auto;
+}
+.layout.dark {
+  cursor: url("./assets/circleDark.svg"), auto;
+}
+.layout.dark .circle {
+  border: 1px solid #000;
 }
 .App .container {
   height: 100vh;
@@ -33,7 +44,11 @@
   border: 1px solid #fff;
   position: absolute;
   z-index: 1000;
+
   margin: 0;
+}
+.circle.dark {
+  width: 100px;
 }
 
 button {

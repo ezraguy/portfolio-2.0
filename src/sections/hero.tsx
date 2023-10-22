@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Sphere, OrbitControls, MeshDistortMaterial } from "@react-three/drei";
 import "../styles/sections/hero.scss";
 import Navbar from "../components/navbar";
+
 const Hero = () => {
   return (
     <div className='hero section'>

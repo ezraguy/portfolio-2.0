@@ -6,9 +6,12 @@ import "./index.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init({
-  offset: 120,
-  duration: 600,
+  offset: 50,
+  duration: 400,
   easing: "ease",
+});
+window.addEventListener("wheel", () => {
+  AOS.refresh();
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
