@@ -40,6 +40,12 @@ const About = () => {
             <div className='content'>
               {content.map((card, index) => (
                 <div
+                  onMouseEnter={() =>
+                    setIsWhiteBackground(
+                      activeItemIndex === index ? false : true
+                    )
+                  }
+                  onMouseLeave={() => setIsWhiteBackground(false)}
                   key={index}
                   style={{ "--i": index } as React.CSSProperties}
                   className={`card ${activeItemIndex === index ? "show" : ""}`}
