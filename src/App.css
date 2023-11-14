@@ -1,7 +1,7 @@
 .App {
-  background-color: #000;
   position: relative;
-  background: url("../public/bg.jpg") center center;
+  background: url("../public/bg.jpg");
+  background-repeat: no-repeat;
 }
 
 .layout {
@@ -16,16 +16,12 @@
   border: 1px solid #000;
 }
 .App .container {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-y: auto;
 }
 
 .section {
   height: 100vh;
   color: #fff;
-  scroll-snap-align: center;
   font-family: "Roboto", sans-serif;
   width: 100%;
   max-width: 1140px;
@@ -33,6 +29,7 @@
 }
 
 .circle {
+  display: none;
   pointer-events: none;
   z-index: -1;
   width: 45px;
@@ -55,6 +52,11 @@ button {
   cursor: url("./assets/circle.svg"), auto;
 }
 
+@media screen and (min-width: 992px) {
+  .circle {
+    display: block;
+  }
+}
 @media screen and (min-width: 1500px) {
   .section {
     width: 100%;

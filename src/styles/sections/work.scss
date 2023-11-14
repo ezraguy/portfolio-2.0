@@ -8,8 +8,7 @@
     width: 95%;
     margin: auto;
     height: 100%;
-    padding-top: 75px;
-
+    gap: 50px;
     @media screen and (min-width: 992px) {
       flex-direction: row;
       justify-content: space-between;

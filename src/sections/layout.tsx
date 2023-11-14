@@ -8,18 +8,20 @@ const Layout = () => {
   const { isWhiteBackground } = useContext(CursorContext);
 
   const handleMouseMove: (e: any) => void = (e?: any) => {
-    const { clientX, clientY } = e;
     cursor.current.style.visibility = "visible";
-    cursor.current.style.transform = `translate3d(${clientX - 10}px, ${
-      clientY - 10
-    }px , 0`;
+    var page: any = document.getElementById("root")?.getBoundingClientRect();
+    var x = e.clientX - page.left;
+    var y = e.clientY - page.top;
+    cursor.current.style.transform = `translate3d(${x - 10}px, ${y - 10}px , 0`;
   };
   useEffect(() => {
     if (window.innerWidth > 500) {
       window.addEventListener("mousemove", (e) => handleMouseMove(e));
+      window.addEventListener("wheel", (e) => handleMouseMove(e));
     }
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("wheel", (e) => handleMouseMove(e));
     };
   }, []);
   return (
