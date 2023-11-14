@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "../styles/sections/about.scss";
 import content from "../content.json";
 import { CursorContext } from "../contexts/cursorContext";
