@@ -39,62 +39,64 @@ const Work = () => {
   const { setIsWhiteBackground } = useContext(CursorContext);
   return (
     <div className='work section'>
-      <div className='left'>
-        <div className='title'>
-          <span data-aos='fade-down' data-aos-delay='200'>
-            Some
-          </span>
-          <span data-aos='fade-down' data-aos-delay='400'>
-            of
-          </span>
-          <span data-aos='fade-down' data-aos-delay='600'>
-            my
-          </span>
-          <span data-aos='fade-down' data-aos-delay='800'>
-            work
-          </span>
+      <div className='wrapper'>
+        <div className='left'>
+          <div className='title'>
+            <span data-aos='fade-down' data-aos-delay='200'>
+              Some
+            </span>
+            <span data-aos='fade-down' data-aos-delay='400'>
+              of
+            </span>
+            <span data-aos='fade-down' data-aos-delay='600'>
+              my
+            </span>
+            <span data-aos='fade-down' data-aos-delay='800'>
+              work
+            </span>
+          </div>
         </div>
-      </div>
-      <div className='right'>
-        <div
-          className='cards'
-          onMouseOver={() => {
-            setIsWhiteBackground(true);
-          }}
-          onMouseOut={() => {
-            setIsWhiteBackground(false);
-          }}
-        >
-          {projects.map((project) => (
-            <div key={project.id} className='card arch'>
-              <img src={project.img} className='projectImage' alt='project' />
-              <div className='overlay'>
-                <div className='projectName'>{project.name}</div>
-                <div className='links'>
-                  <div className='link'>
-                    <a
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href={project.websiteLink}
-                    >
-                      <img src={LinkIcon} alt='project landing page' />
-                    </a>
-                  </div>
-                  {project.codeLink && (
+        <div className='right'>
+          <div
+            className='cards'
+            onMouseOver={() => {
+              setIsWhiteBackground(true);
+            }}
+            onMouseOut={() => {
+              setIsWhiteBackground(false);
+            }}
+          >
+            {projects.map((project) => (
+              <div key={project.id} className='card arch'>
+                <img src={project.img} className='projectImage' alt='project' />
+                <div className='overlay'>
+                  <div className='projectName'>{project.name}</div>
+                  <div className='links'>
                     <div className='link'>
                       <a
                         target='_blank'
                         rel='noopener noreferrer'
-                        href={project.codeLink}
+                        href={project.websiteLink}
                       >
-                        <img src={CodeIcon} alt='project code link' />
+                        <img src={LinkIcon} alt='project landing page' />
                       </a>
                     </div>
-                  )}
+                    {project.codeLink && (
+                      <div className='link'>
+                        <a
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          href={project.codeLink}
+                        >
+                          <img src={CodeIcon} alt='project code link' />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

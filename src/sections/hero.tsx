@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className='hero section'>
       <Navbar />
-      <div className='container'>
+      <div className='wrapper'>
         <div className='left'>
           <div className='content'>
             <h1 className='name' data-aos='fade-down' data-aos-delay='600'>

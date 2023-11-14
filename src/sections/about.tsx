@@ -6,7 +6,8 @@ const About = () => {
   const items: string[] = ["who", "why", "what"];
   const { setIsWhiteBackground } = useContext(CursorContext);
 
-  const [activeItemIndex, setActiveItemIndex] = useState<number>(0);
+  const [activeItemIndex, setActiveItemIndex] = useState<number | null>(null);
+
   const handleActiveItem: (index: number) => void = (index: number) => {
     setActiveItemIndex(index);
   };
@@ -35,28 +36,17 @@ const About = () => {
           ))}
         </div>
         <div className='right'>
-          <div
-            data-aos='zoom-in'
-            data-aos-delay='200'
-            className='editor'
-            onMouseEnter={() => setIsWhiteBackground(true)}
-            onMouseLeave={() => setIsWhiteBackground(false)}
-          >
-            <div className='lineNumbers'>
-              {new Array(19).fill("").map((item, index) => (
-                <div className='' key={index}>
-                  {index + 1}
+          <div data-aos='zoom-in' data-aos-delay='200' className='editor'>
+            <div className='content'>
+              {content.map((card, index) => (
+                <div
+                  key={index}
+                  style={{ "--i": index } as React.CSSProperties}
+                  className={`card ${activeItemIndex === index ? "show" : ""}`}
+                >
+                  {card}
                 </div>
               ))}
-            </div>
-            <div className='content'>
-              {[...Object.values(content)[activeItemIndex].split(" ")].map(
-                (item, index) => (
-                  <div key={index} className='word'>
-                    {item}
-                  </div>
-                )
-              )}
             </div>
           </div>
         </div>

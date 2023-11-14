@@ -62,4 +62,12 @@ button {
     justify-content: space-between;
     margin: 0 auto;
   }
+  .wrapper {
+    width: 100% !important;
+  }
+}
+
+.wrapper {
+  width: 95%;
+  margin: auto;
 }

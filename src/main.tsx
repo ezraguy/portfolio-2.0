@@ -6,7 +6,7 @@ import "./index.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init({
-  offset: 50,
+  offset: 0,
   duration: 400,
   easing: "ease",
 });
