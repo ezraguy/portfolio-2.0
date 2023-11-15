@@ -116,8 +116,9 @@
             }
             .links {
               display: flex;
-              gap: 10px;
+              gap: 15px;
               .link {
+                width: 30px;
                 a {
                   &:hover {
                     cursor: none !important;

@@ -39,7 +39,9 @@
     .link {
       width: 30px;
       height: 30px;
+      transition: 0.3s ease;
       &:hover {
+        scale: 1.1;
         cursor: none;
       }
     }
